@@ -1,13 +1,13 @@
 /* ================= GLOBAL ================= */
 :root {
-  --primary-color: #c77743; /* Caramel */
-  --secondary-color: #e8c29f; /* Vintage Cream */
-  --accent-color: #f0e6d6; /* Almond White */
-  --text-dark: #3e2e1e; /* Rich Mocha */
-  --bg-cream: #fffaf2; /* Warm Cream Background */
+  --primary-color: #c77743;
+  --secondary-color: #e8c29f;
+  --accent-color: #f0e6d6;
+  --text-dark: #3e2e1e;
+  --bg-cream: #fffaf2;
   --white: #ffffff;
-  --panel-bg: #faead7; /* Buttery Cream Panel */
-  --btn-hover: #a76034; /* Darker Caramel */
+  --panel-bg: #faead7;
+  --btn-hover: #a76034;
 }
 
 body {
@@ -17,276 +17,228 @@ body {
   color: var(--text-dark);
 }
 
-* {
+/* ================= FLOATING DARK MODE BUTTON ================= */
+.theme-toggle-btn {
+  position: fixed;
+  top: 60px;
+  right: 18px;
+  z-index: 999;
+  background: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #a076f9; /* lavender icon color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
   transition: 0.3s ease;
+}
+/* .theme-toggle-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+} */
+
+.theme-toggle-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= DARK MODE COLORS (LAVENDER NIGHT THEME) ================= */
+body.dark-mode {
+  background: #2a2438;  /* lavender deep night */
+  color: #e8defc;       /* soft lavender white */
+}
+
+body.dark-mode header,
+body.dark-mode .pastel-box,
+body.dark-mode .product-box,
+body.dark-mode .banner,
+body.dark-mode footer,
+body.dark-mode .review-card {
+  background: #352f44;  /* plum-grey */
+  border-color: #5b507a;
+  color: #e8defc;
+}
+
+body.dark-mode .banner-title,
+body.dark-mode .product-title {
+  color: #d7b8ff; /* lavender highlight */
+}
+
+body.dark-mode img {
+  filter: brightness(0.82);
+}
+
+body.dark-mode .pastel-btn {
+  background: #a076f9;
+  color: #fff;
+}
+
+body.dark-mode .pastel-btn:hover {
+  background: #8c5bff;
 }
 
 /* ================= HEADER ================= */
 header {
-  padding: 22px 0;
+  padding: 20px 0;
   border-bottom: 3px solid var(--secondary-color);
   background: var(--panel-bg);
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 6px 12px rgba(62, 46, 30, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  border-radius: 0 0 20px 20px;
 }
-
-/* LOGO */
 .logo img {
-  width: 58px !important;
-  object-fit: contain;
-  display: block;
+  width: 80px;
   padding: 20px;
 }
-
-/* NAV MENU */
 .menu a {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-dark) !important;
 }
-
 .menu a:hover {
   color: var(--primary-color) !important;
-  transform: translateY(-2px);
-}
-
-.menu a.active {
-  color: var(--primary-color) !important;
-  border-bottom: 2px solid var(--secondary-color);
+  transform: translateY(-3px);
 }
 
 /* ================= BANNER ================= */
 .banner {
-  background: linear-gradient(120deg, var(--panel-bg), var(--secondary-color), var(--accent-color));
-  animation: gradientMove 12s ease infinite;
-  background-size: 200% 200%;
-  padding: 40px;
-  border-radius: 35px;
-  margin-top: 25px;
+  background: linear-gradient(to right, #ffe5e8, #fff5f6);
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
   border: 1px solid var(--secondary-color);
-  box-shadow: 0 12px 22px rgba(62, 46, 30, 0.12);
 }
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 .banner-title {
-  font-size: 72px;
-  font-weight: 800;
-  color: var(--text-dark);
+  font-size: 70px;
   font-family: 'Playfair Display', serif;
-  text-shadow: 2px 2px 3px rgba(62, 46, 30, 0.15);
+  font-weight: 800;
 }
-
 .banner-sub {
   color: var(--primary-color);
   font-weight: 600;
 }
-
-/* Banner images */
 .banner-img {
-  width: 520px !important;
-  object-fit: cover;
-  border-radius: 18px;
-  margin: 0 auto;
-  box-shadow: 0 10px 20px rgba(62, 46, 30, 0.18);
+  width: 500px;
+  border-radius: 15px;
 }
 
 /* ================= SIDEBAR ================= */
 .sidebar-title {
-  color: var(--text-dark);
   font-weight: 700;
-  letter-spacing: 2px;
 }
-
 .pastel-box {
   background: var(--panel-bg);
-  border-radius: 18px;
-  margin-bottom: 12px;
-  border: 1px solid var(--secondary-color);
-  box-shadow: 0 6px 10px rgba(62, 46, 30, 0.08);
-  padding: 22px;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
-
-.accordion-button {
-  background: var(--panel-bg);
-  color: var(--text-dark);
-  font-weight: 600;
-}
-
-.accordion-button:not(.collapsed) {
-  background: var(--secondary-color);
-  color: var(--text-dark);
-}
-
 .accordion-body {
   background: var(--white);
-  border-radius: 12px;
-  color: var(--text-dark);
 }
 
-/* ================= PRODUCTS ================= */
-.product-title {
-  color: var(--text-dark);
-  font-weight: 800;
-  font-size: 34px;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
+/* ================= PRODUCT BOX ================= */
 .product-box {
   background: var(--white);
-  border-radius: 22px;
+  border-radius: 20px;
   padding: 15px;
   margin-bottom: 25px;
-  border: 1px solid transparent;
-  box-shadow: 0 8px 15px rgba(199, 119, 67, 0.15);
-  transition: 0.35s;
+  box-shadow: 0 6px 15px rgba(255, 183, 178, 0.15);
+  transition: 0.3s ease;
 }
-
 .product-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 15px 30px rgba(199, 119, 67, 0.28);
-  border-color: var(--secondary-color);
+  transform: translateY(-6px);
 }
-
 .product-box img {
-  border-radius: 18px;
-  height: 200px;
+  border-radius: 15px;
+  height: 180px;
   width: 100%;
   object-fit: cover;
-  border: 3px solid transparent;
-  background: linear-gradient(var(--primary-color), var(--secondary-color)) border-box;
 }
 
 /* BUTTON */
 .pastel-btn {
   background: var(--primary-color);
   color: var(--white);
-  padding: 10px 22px;
-  border-radius: 22px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
+  border-radius: 20px;
+  padding: 8px 18px;
+  transition: 0.3s ease;
 }
-
 .pastel-btn:hover {
   background: var(--btn-hover);
-  box-shadow: 0 0 18px rgba(199, 119, 67, 0.55);
-  transform: translateY(-3px);
+}
+
+/* ================= REVIEW SECTION ================= */
+.review-section {
+  background: #796e92 !important; ;
+}
+.review-card {
+  max-width: 650px;
+  border-radius: 22px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: var(--white);
 }
 
 /* ================= FOOTER ================= */
 footer {
   background: var(--secondary-color);
   margin-top: 60px;
-  padding: 35px;
-  border-radius: 35px 35px 0 0;
+  padding: 30px;
+  border-radius: 30px 30px 0 0;
+  color: var(--text-dark);
+}
+
+/* 🌙 NAVBAR text colors in dark mode */
+body.dark-mode .menu a {
+  color: #ffffff !important; /* white text when normal */
+}
+
+body.dark-mode .menu a:hover {
+  color: #c7a4ff !important; /* light purple on hover */
+}
+/* 🌙 CAROUSEL TEXT in dark mode */
+
+body.dark-mode .banner-sub{
+  color: #ffffff !important; /* white text */
+}
+body.dark-mode .banner-title:hover {
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.banner p:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+/* ✨ Glow for banner paragraph (dark mode) */
+body.dark-mode .banner p:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+               0 0 18px rgba(255, 255, 255, 0.6);
+  transition: 0.3s ease;
+}
+/* 🌼 CATEGORY ITEM (Light Mode) */
+.accordion-button {
+  background: var(--panel-bg);
   color: var(--text-dark);
   font-weight: 600;
-  box-shadow: 0 -6px 20px rgba(62, 46, 30, 0.10);
-  text-align: center;
+  border-radius: 10px;
 }
-
-/* ================= UTILS ================= */
-.text-muted {
-  color: #7a5b44 !important;
-}
-
-.price-tag {
+.accordion-button:not(.collapsed) {
+  background: #f3d5c4; /* soft peach / pastel café */
   color: var(--text-dark);
-  font-weight: 700;
-  float: right;
+}
+/* 🌙 CATEGORY ITEM (Dark Mode) */
+body.dark-mode .accordion-button {
+  background: #6a5992 !important;  /* plum grey */
+  color: #ffffff !important;       /* white text */
+}
+body.dark-mode .accordion-button:not(.collapsed) {
+  background: #6a5992 !important;  /* stronger lavender contrast */
+  color: #ffffff !important;
+}
+/* 🌙 Accordion content text in dark mode */
+body.dark-mode .accordion-body {
+  color: #9b59ba !important; /* bright white text */
 }
 
-/* ================= FORMS ================= */
-.form-label {
-  color: var(--text-dark);
-  font-weight: 600;
-}
 
-.form-control,
-.form-select {
-  border: 2px solid var(--secondary-color);
-  border-radius: 15px;
-  color: var(--text-dark);
-  background-color: var(--white);
-}
-
-.form-control:focus,
-.form-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.23rem rgba(199, 119, 67, 0.28);
-}
-
-.form-check-input:checked {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
-/* ================= MANGA ================= */
-.manga-cover {
-  height: 320px;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-bottom: 18px;
-}
-
-.manga-box {
-  background: var(--white);
-  border-radius: 22px;
-  padding: 15px;
-  border: 1px solid transparent;
-  box-shadow: 0 7px 15px rgba(199, 119, 67, 0.15);
-  transition: 0.35s;
-}
-
-.manga-box:hover {
-  transform: scale(1.03);
-  border-color: var(--secondary-color);
-  box-shadow: 0 15px 28px rgba(199, 119, 67, 0.25);
-}
-
-/* ================= MENU PAGE ================= */
-.menu-section-title {
-  color: var(--primary-color);
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
-  border-bottom: 2px dashed var(--secondary-color);
-  display: inline-block;
-  margin-bottom: 30px;
-  font-size: 26px;
-}
-
-.menu-item {
-  margin-bottom: 15px;
-  border-bottom: 1px solid var(--secondary-color);
-  padding-bottom: 10px;
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-/* ================= SMOOTH SCROLL ================= */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ================= HOVER SOFT SHAKE ================= */
-.product-box:hover, .manga-box:hover {
-  animation: softJiggle 0.32s ease;
-}
-
-@keyframes softJiggle {
-  0% { transform: scale(1.03) rotate(0deg); }
-  35% { transform: scale(1.035) rotate(0.4deg); }
-  70% { transform: scale(1.032) rotate(-0.3deg); }
-  100% { transform: scale(1.03) rotate(0deg); }
-}

@@ -8,19 +8,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-  <link rel="stylesheet" href="MyCafe.css?v=3" />
+  <link rel="stylesheet" href="MyCafe.css?v=5" />
 </head>
 
 <body>
+
+  <!-- 🌙 FLOATING DARK MODE BUTTON -->
+  <button id="themeToggle" class="theme-toggle-btn">
+    <i id="themeIcon" class="fa-solid fa-moon"></i>
+  </button>
+
+  <!-- HEADER -->
   <div class="row align-items-center">
-    <!-- SMALL LOGO -->
     <figure class="col-xl-3 logo">
       <a href="MyCafe.html">
         <img src="https://cdn-icons-png.flaticon.com/128/9620/9620771.png" alt="Cafe Logo" />
       </a>
     </figure>
 
-    <!-- NAV MENU -->
     <div class="col-xl-9">
       <ul class="nav justify-content-end menu">
         <li class="nav-item">
@@ -28,15 +33,12 @@
             <i class="fa-solid fa-mug-hot"></i> Café
           </a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="menu.html"><i class="fa-solid fa-bread-slice"></i> Menu</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="flowers.html"><i class="fa-solid fa-spa"></i> Flowers</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="manga.html"><i class="fa-solid fa-book-open"></i> Manga Library</a>
         </li>
@@ -45,64 +47,50 @@
   </div>
   </header>
 
-  <!-- ================= BANNER ================= -->
+  <!-- BANNER -->
   <div class="container banner">
     <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
-        <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="row">
             <div class="col-xl-6 pt-5">
               <h1 class="display-1 banner-title">Flowerdoor Café</h1>
               <h2 class="banner-sub">Flowers • Coffee • Manga</h2>
-              <p>
-                A cozy pastel world where warm brews, soft petals, and your
-                favorite manga come together.
-              </p>
+              <p>A cozy pastel world where warm brews, soft petals, and your favorite manga come together.</p>
             </div>
-
             <div class="col-xl-6 text-center">
-              <img
-                src="https://img.freepik.com/premium-photo/anime-style-illustration-flower-shop-with-bench-flowering-trees-generative-ai_958138-39752.jpg"
-                class="banner-img" alt="Banner Image 1" />
+              <img src="https://img.freepik.com/premium-photo/anime-style-illustration-flower-shop-with-bench-flowering-trees-generative-ai_958138-39752.jpg"
+                class="banner-img" alt="" />
             </div>
           </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="row">
             <div class="col-xl-6 pt-5">
               <h1 class="display-1 banner-title">FlowerDoor Café</h1>
               <h2 class="banner-sub">An Aesthetic Space</h2>
-              <p>
-                Sip your coffee while reading manga in a floral, magical,
-                aesthetic café.
-              </p>
+              <p>Sip your coffee while reading manga in a floral, magical, aesthetic café.</p>
             </div>
             <div class="col-xl-6 text-center">
               <img
                 src="https://img.freepik.com/premium-photo/lofi-book-shop-cafe-anime-manga-style-cozy-chill-relax-interior-wallpaper-background_598925-8238.jpg"
-                class="banner-img" alt="Banner Image 2" />
+                class="banner-img" alt="" />
             </div>
           </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="carousel-item">
           <div class="row">
             <div class="col-xl-6 pt-5">
               <h1 class="display-1 banner-title">FlowerDoor Café</h1>
               <h2 class="banner-sub">Soft Warm Vibes</h2>
-              <p>
-                Warm light, pastel flowers, soothing drinks — peace for your
-                soul.
-              </p>
+              <p>Warm light, pastel flowers, soothing drinks — peace for your soul.</p>
             </div>
             <div class="col-xl-6 text-center">
               <img
                 src="https://e0.pxfuel.com/wallpapers/506/308/desktop-wallpaper-coffee-shop-a%CB%9C%E2%80%A2-calm-lofi-hiphop-mix-anime-coffee-coffee-shop-aesthetic-aesthetic.jpg"
-                class="banner-img" alt="Banner Image 3" />
+                class="banner-img" alt="" />
             </div>
           </div>
         </div>
@@ -111,16 +99,16 @@
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
       </button>
-
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
   </div>
 
-  <!-- ================= CONTENT ================= -->
+  <!-- CONTENT -->
   <div class="container pt-5 pb-5">
     <div class="row">
+
       <!-- LEFT PANEL -->
       <div class="col-xl-3">
         <section class="pt-2 pb-2">
@@ -128,57 +116,36 @@
 
           <div class="accordion" id="accordionExample">
             <div class="accordion-item pastel-box">
-              <h2 class="accordion-header">
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#drinks">
-                  Drinks
-                </button>
-              </h2>
+              <button class="accordion-button" data-bs-target="#drinks" data-bs-toggle="collapse">Drinks</button>
               <div id="drinks" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                  Latte, Sakura Tea, Matcha, Cold Brews
-                </div>
+                <div class="accordion-body">Latte, Sakura Tea, Matcha, Cold Brews</div>
               </div>
             </div>
 
             <div class="accordion-item pastel-box">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flowers">
-                  Flowers
-                </button>
-              </h2>
+              <button class="accordion-button collapsed" data-bs-target="#flowers" data-bs-toggle="collapse">Flowers</button>
               <div id="flowers" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Bouquets, Pastel Arrangements, Gifts
-                </div>
+                <div class="accordion-body">Bouquets, Pastel Arrangements, Gifts</div>
               </div>
             </div>
 
             <div class="accordion-item pastel-box">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#manga">
-                  Manga
-                </button>
-              </h2>
+              <button class="accordion-button collapsed" data-bs-target="#manga" data-bs-toggle="collapse">Manga</button>
               <div id="manga" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Shoujo, Romance, Fantasy, Slice of Life
-                </div>
+                <div class="accordion-body">Shoujo, Romance, Fantasy, Slice of Life</div>
               </div>
             </div>
           </div>
         </section>
 
         <figure class="pt-2 pb-2 leftbanner">
-          <img src="https://w0.peakpx.com/wallpaper/51/778/HD-wallpaper-anime-shop-flower.jpg" class="img-fluid"
-            alt="Side Banner" />
+          <img src="https://w0.peakpx.com/wallpaper/51/778/HD-wallpaper-anime-shop-flower.jpg" class="img-fluid" alt="" />
         </figure>
       </div>
 
       <!-- RIGHT PANEL -->
       <div class="col-xl-9">
-        <h2 class="text-center text-uppercase pt-2 pb-4 product-title">
-          Café Specials
-        </h2>
+        <h2 class="text-center text-uppercase pt-2 pb-4 product-title">Café Specials</h2>
 
         <div class="row">
           <figure class="col-xl-4 col-6 text-center product-box">
@@ -190,7 +157,8 @@
           </figure>
 
           <figure class="col-xl-4 col-6 text-center product-box">
-            <img src="https://japanfoodstyle.com/wp-content/uploads/2019/02/Sakuracha-Japanese-Cherry-Blossom-Tea-600x500.jpg" class="img-fluid" alt="" />
+            <img src="https://japanfoodstyle.com/wp-content/uploads/2019/02/Sakuracha-Japanese-Cherry-Blossom-Tea-600x500.jpg"
+              class="img-fluid" alt="" />
             <h3>₹ 280</h3>
             <p>Sakura Tea</p>
             <button class="btn pastel-btn">Order Now</button>
@@ -234,7 +202,51 @@
     </div>
   </div>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ⭐ Review Section -->
+  <section class="review-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" style="font-family:'Playfair Display', serif;">What our guests say</h2>
+
+      <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="review-card text-center mx-auto p-4">
+              <p class="fst-italic">“The coziest café vibe — feels like stepping into an anime panel.”</p>
+              <h6 class="fw-bold mt-2">— Aditi</h6>
+              <p class="text-warning fs-4">★★★★★</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="review-card text-center mx-auto p-4">
+              <p class="fst-italic">“Flowers + coffee + manga = heaven for introverts.”</p>
+              <h6 class="fw-bold mt-2">— Riya</h6>
+              <p class="text-warning fs-4">★★★★★</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="review-card text-center mx-auto p-4">
+              <p class="fst-italic">“A perfect escape from work stress. Absolute peace.”</p>
+              <h6 class="fw-bold mt-2">— Dev</h6>
+              <p class="text-warning fs-4">★★★★☆</p>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="container pt-4 pb-4">
       <div class="row">
@@ -244,31 +256,44 @@
           <p>Flowers</p>
           <p>Manga</p>
         </div>
-
         <div class="col-xl-2">
           <h4>About</h4>
           <p>Our Story</p>
           <p>Team</p>
           <p>Careers</p>
         </div>
-
         <div class="col-xl-2">
           <h4>Contact</h4>
           <p>Help</p>
           <p>FAQ</p>
           <p>Press</p>
         </div>
-
         <div class="col-xl-6 text-end">
           <h4>Flowerdoor Café</h4>
-          <p>
-            A place where you can relax, read, and enjoy the beauty of nature.
-          </p>
+          <p>A place where you can relax, read, and enjoy the beauty of nature.</p>
           <p>&copy; 2024 Flowerdoor Café. All rights reserved.</p>
         </div>
       </div>
     </div>
   </footer>
-</body>
 
+  <!-- 🌙 Dark Mode Script -->
+  <script>
+    const themeBtn = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const savedTheme = localStorage.getItem("flowerdoor-theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      themeIcon.classList.replace("fa-moon", "fa-sun");
+    }
+
+    themeBtn.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark-mode");
+      themeIcon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+      localStorage.setItem("flowerdoor-theme", isDark ? "dark" : "light");
+    });
+  </script>
+
+</body>
 </html>
