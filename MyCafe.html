@@ -278,22 +278,8 @@
   </footer>
 
   <!-- 🌙 Dark Mode Script -->
-  <script>
-    const themeBtn = document.getElementById("themeToggle");
-    const themeIcon = document.getElementById("themeIcon");
-    const savedTheme = localStorage.getItem("flowerdoor-theme");
-
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      themeIcon.classList.replace("fa-moon", "fa-sun");
-    }
-
-    themeBtn.addEventListener("click", () => {
-      const isDark = document.body.classList.toggle("dark-mode");
-      themeIcon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
-      localStorage.setItem("flowerdoor-theme", isDark ? "dark" : "light");
-    });
-  </script>
+  <!-- 🌙 Dark Mode Script -->
+  <script src="main.js"></script>
 
 </body>
 </html>
