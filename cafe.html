@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -29,6 +29,12 @@
             <!-- NAV MENU -->
             <div class="col-xl-9">
                 <ul class="nav justify-content-end menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fa-solid fa-shopping-cart"></i> Cart <span id="cart-count"
+                                class="badge bg-danger rounded-pill">0</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="cafe.html">
                             <i class="fa-solid fa-mug-hot"></i> Café
@@ -122,6 +128,52 @@
                 <button class="btn pastel-btn">Order Now</button>
             </figure>
         </div>
+
+        <!-- RESERVATION SECTION -->
+        <h2 class="text-center text-uppercase pt-5 pb-4 product-title">
+            Book a Table
+        </h2>
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="pastel-box p-5">
+                    <form id="reservationForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="resName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="resName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="resPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="resPhone" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="resDate" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="resDate" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="resTime" class="form-label">Time</label>
+                                <input type="time" class="form-control" id="resTime" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="resGuests" class="form-label">Number of Guests</label>
+                            <select class="form-select" id="resGuests">
+                                <option value="1">1 Person</option>
+                                <option value="2" selected>2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn pastel-btn btn-lg">Confirm Reservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ================= FOOTER ================= -->
@@ -135,6 +187,33 @@
         </div>
     </footer>
     <script src="main.js"></script>
+    <!-- 🛒 CART MODAL -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background: var(--bg-cream); color: var(--text-dark);">
+                <div class="modal-header" style="border-bottom: 1px dashed var(--secondary-color);">
+                    <h5 class="modal-title" id="cartModalLabel" style="color: var(--primary-color); font-weight: 700;">
+                        Your Cart 🌸</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <p class="text-center text-muted">Your cart is empty.</p>
+                    </div>
+                    <hr style="border-top: 1px dashed var(--secondary-color);">
+                    <div class="d-flex justify-content-between fw-bold">
+                        <span>Total:</span>
+                        <span id="cart-total">₹ 0</span>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border-top: none;">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn pastel-btn"
+                        onclick="alert('Thank you for your order! 🌸')">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
