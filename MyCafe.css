@@ -265,10 +265,9 @@ body.dark-mode .accordion-body {
 .product-box img {
   border-radius: 20px;
   width: 100%;
-  aspect-ratio: 1/1;
-  /* Square */
+  height: 220px;
+  /* Reduced fixed height */
   object-fit: cover;
-  /* Prevents stretching */
   margin-bottom: 15px;
   display: block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -367,8 +366,8 @@ footer p:hover {
 
 .manga-cover {
   width: 100%;
-  aspect-ratio: 1/1;
-  /* Square */
+  height: 220px !important;
+  /* Reduced fixed height */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
