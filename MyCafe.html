@@ -168,8 +168,14 @@
   <!-- ⭐ Review Section -->
   <section class="review-section py-5">
     <div class="container">
-      <h2 class="text-center mb-4" style="font-family:'Playfair Display', serif;">What our guests say</h2>
+      <h1 class="text-center banner-title" style="font-family:'Playfair Display', serif;">FlowerDoor Café</h1>
+      <p class="text-center text-uppercase pb-3 banner-subtitle" style="letter-spacing: 2px;">Tea. Aesthetic. Shojo.</p>
+      <div class="text-center">
+        <button class="btn btn-outline-dark rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#quizModal">✨ Take
+          the Vibe Check ✨</button>
+      </div>
 
+      <!-- BANNER CAROUSEL -->
       <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div id="reviews-container" class="carousel-inner">
           <!-- Dynamic Content -->
@@ -242,6 +248,51 @@
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn pastel-btn" onclick="alert('Thank you for your order! 🌸')">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🧩 QUIZ MODAL -->
+  <div class="modal fade" id="quizModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background: var(--bg-cream); border: 2px solid var(--primary-color);">
+        <div class="modal-header border-0">
+          <h5 class="modal-title w-100 text-center" style="font-family: 'Playfair Display', serif;">🌸 What's Your Vibe?
+            🌸</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center" id="quizBody">
+          <!-- Step 1 -->
+          <div class="quiz-step" id="step1">
+            <p class="lead">pick a perfect afternoon...</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-secondary rounded-pill" onclick="nextQuiz(1, 'cozy')">📖 Reading by the
+                window</button>
+              <button class="btn btn-outline-secondary rounded-pill" onclick="nextQuiz(1, 'floral')">💐 Arranging fresh
+                flowers</button>
+              <button class="btn btn-outline-secondary rounded-pill" onclick="nextQuiz(1, 'cafe')">☕ Sipping a hot
+                latte</button>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="quiz-step d-none" id="step2">
+            <p class="lead">pick a color palette...</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-secondary rounded-pill" onclick="nextQuiz(2, 'cafe')">🟤 Warm
+                Browns</button>
+              <button class="btn btn-outline-secondary rounded-pill" onclick="nextQuiz(2, 'floral')">🌸 Pastel
+                Pinks</button>
+              <button class="btn btn-outline-secondary rounded-pill" onclick="nextQuiz(2, 'cozy')">📜 Vintage
+                Paper</button>
+            </div>
+          </div>
+          <!-- Result -->
+          <div class="quiz-step d-none" id="quizResult">
+            <h3>✨ You are the <span id="vibeName">...</span> ✨</h3>
+            <p id="vibeDesc">...</p>
+            <div id="vibeProduct" class="mt-3 p-3 border rounded"></div>
+          </div>
         </div>
       </div>
     </div>

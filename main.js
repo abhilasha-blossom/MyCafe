@@ -507,7 +507,52 @@
     calculateTotal();
   }
 
-  // ================= LOFI WIDGET LOGIC =================
+  // ================= QUIZ LOGIC =================
+  let quizScore = { cozy: 0, floral: 0, cafe: 0 };
+
+  window.nextQuiz = function (step, choice) {
+    quizScore[choice]++;
+
+    if (step === 1) {
+      document.getElementById('step1').classList.add('d-none');
+      document.getElementById('step2').classList.remove('d-none');
+    } else if (step === 2) {
+      document.getElementById('step2').classList.add('d-none');
+      document.getElementById('quizResult').classList.remove('d-none');
+      showResult();
+    }
+  };
+
+  function showResult() {
+    let vibe = Object.keys(quizScore).reduce((a, b) => quizScore[a] > quizScore[b] ? a : b);
+
+    const titles = {
+      cozy: "Dreamy Reader",
+      floral: "Flower Fairy",
+      cafe: "Coffee Connoisseur"
+    };
+
+    const descs = {
+      cozy: "You love getting lost in other worlds. We recommend a captivating manga.",
+      floral: "You bring beauty everywhere you go. A fresh bouquet is perfect for you.",
+      cafe: "You appreciate the finer sips in life. Try our signature brew."
+    };
+
+    // Find a product
+    let product;
+    if (vibe === 'cozy') product = products.manga[0];
+    if (vibe === 'floral') product = products.flowers[0];
+    if (vibe === 'cafe') product = products.cafe[0];
+
+    document.getElementById('vibeName').innerText = titles[vibe];
+    document.getElementById('vibeDesc').innerText = descs[vibe];
+    document.getElementById('vibeProduct').innerHTML = `
+      <img src="${product.image}" class="img-fluid rounded mb-2" style="height:100px; width:100px; object-fit:cover;">
+      <h6>${product.name}</h6>
+      <button class="btn btn-sm pastel-btn" onclick="addToCart('${product.name}', ${product.price}); bootstrap.Modal.getInstance(document.getElementById('quizModal')).hide();">Add to Cart - ₹${product.price}</button>
+    `;
+  }
+
   const lofiWidget = document.createElement("div");
   lofiWidget.id = "lofi-widget";
   lofiWidget.innerHTML = `
