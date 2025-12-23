@@ -287,19 +287,72 @@ body.dark-mode .accordion-body {
   opacity: 0.8;
 }
 
-/* BUTTON */
-.pastel-btn {
-  background: var(--primary-color);
-  color: #fff !important;
-  /* Force white text */
-  border: none;
-  border-radius: 50px;
-  padding: 10px 25px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px var(--shadow-color);
-  transition: all 0.3s ease;
+/* ================= PRELOADER ================= */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-cream);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease;
 }
+
+.loader-flower {
+  width: 80px;
+  animation: spinSlow 3s linear infinite;
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= COMPONENT UTILS ================= */
+.product-box,
+.manga-box {
+  position: relative;
+  /* For absolute positioning of heart */
+}
+
+.fav-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  transition: all 0.3s ease;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.fav-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.fav-btn.active {
+  color: #ff4d4d;
+  /* Red Heart */
+}
+
 
 .pastel-btn:hover {
   background: var(--btn-hover);

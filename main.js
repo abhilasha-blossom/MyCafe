@@ -132,6 +132,7 @@
 
     homeSpecialsContainer.innerHTML = specials.map((item, index) => `
       <figure class="col-lg-4 col-md-6 col-6 text-center product-box" data-aos="fade-up" data-aos-delay="${index * 100}">
+        <button class="fav-btn" data-name="${item.name}" data-img="${item.image}" data-price="${item.price}"><i class="fa-regular fa-heart"></i></button>
         <img src="${item.image}" class="img-fluid" alt="${item.name}" />
         <h3>₹ ${item.price}</h3>
         <p>${item.name}</p>
@@ -234,6 +235,7 @@
     mangaGrid.innerHTML = mangas.map((item, index) => `
       <div class="col-xl-3 col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="${index * 50}">
         <div class="manga-box text-center">
+          <button class="fav-btn" data-name="${item.name}" data-img="${item.image}" data-price="0"><i class="fa-regular fa-heart"></i></button>
           <img src="${item.image}" class="img-fluid manga-cover" alt="${item.name}" />
           <h4>${item.name}</h4>
           <p class="text-muted">${item.genre}</p>
@@ -242,6 +244,53 @@
       </div>
     `).join('');
   }
+
+  // ================= FAVORITES / WISHLIST LOGIC =================
+  document.body.addEventListener("click", (e) => {
+    const btn = e.target.closest(".fav-btn");
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation(); // Don't trigger card click
+      const name = btn.getAttribute("data-name");
+      const img = btn.getAttribute("data-img");
+      const price = btn.getAttribute("data-price");
+
+      let wishlist = JSON.parse(localStorage.getItem('flowerdoor-wishlist')) || [];
+      const existingIndex = wishlist.findIndex(item => item.name === name);
+
+      if (existingIndex > -1) {
+        // Remove
+        wishlist.splice(existingIndex, 1);
+        btn.classList.remove("active");
+        btn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+      } else {
+        // Add
+        wishlist.push({ name, image: img, price });
+        btn.classList.add("active");
+        btn.innerHTML = '<i class="fa-solid fa-heart"></i>';
+
+        // Cute animation effect
+        const heart = document.createElement('i');
+        heart.className = 'fa-solid fa-heart text-danger';
+        heart.style.position = 'fixed';
+        heart.style.left = e.clientX + 'px';
+        heart.style.top = e.clientY + 'px';
+        heart.style.fontSize = '2rem';
+        heart.style.pointerEvents = 'none';
+        heart.style.transition = 'all 0.8s ease';
+        heart.style.zIndex = 10000;
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.style.transform = 'translateY(-100px) scale(0)';
+          heart.style.opacity = 0;
+        }, 10);
+        setTimeout(() => heart.remove(), 800);
+      }
+
+      localStorage.setItem('flowerdoor-wishlist', JSON.stringify(wishlist));
+    }
+  });
 
   // ================= ORDER BUTTON LOGIC (DELEGATED) =================
   document.body.addEventListener("click", (e) => {
