@@ -113,7 +113,7 @@
     ].slice(0, 6); // Just top 6 for home
 
     homeSpecialsContainer.innerHTML = specials.map(item => `
-      <figure class="col-xl-6 col-6 text-center product-box">
+      <figure class="col-lg-4 col-md-4 col-6 text-center product-box">
         <img src="${item.image}" class="img-fluid" alt="${item.name}" />
         <h3>₹ ${item.price}</h3>
         <p>${item.name}</p>
@@ -198,7 +198,7 @@
   const flowerGrid = document.getElementById("flower-grid");
   if (flowerGrid && typeof products !== 'undefined') {
     flowerGrid.innerHTML = products.flowers.map(item => `
-      <figure class="col-xl-4 col-6 text-center product-box">
+      <figure class="col-lg-4 col-md-4 col-6 text-center product-box">
         <img src="${item.image}" class="img-fluid" alt="${item.name}" />
         <h3>₹ ${item.price}</h3>
         <p>${item.name}</p>
@@ -212,7 +212,7 @@
   if (mangaGrid && typeof products !== 'undefined') {
     const mangas = products.manga.filter(m => m.category !== 'Set');
     mangaGrid.innerHTML = mangas.map(item => `
-      <div class="col-xl-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-4 col-6 mb-4">
         <div class="manga-box text-center">
           <img src="${item.image}" class="img-fluid manga-cover" alt="${item.name}" />
           <h4>${item.name}</h4>
