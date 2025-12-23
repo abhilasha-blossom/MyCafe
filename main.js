@@ -113,7 +113,7 @@
     ].slice(0, 6); // Just top 6 for home
 
     homeSpecialsContainer.innerHTML = specials.map(item => `
-      <figure class="col-xl-4 col-6 text-center product-box">
+      <figure class="col-xl-6 col-6 text-center product-box">
         <img src="${item.image}" class="img-fluid" alt="${item.name}" />
         <h3>₹ ${item.price}</h3>
         <p>${item.name}</p>

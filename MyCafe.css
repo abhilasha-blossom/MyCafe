@@ -363,7 +363,8 @@ footer p:hover {
 
 .manga-cover {
   width: 100%;
-  height: 300px !important;
+  height: 200px !important;
+  /* Standardize with other product images */
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
