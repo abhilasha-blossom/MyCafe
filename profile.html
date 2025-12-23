@@ -17,41 +17,61 @@
         <i id="themeIcon" class="fa-solid fa-moon"></i>
     </button>
 
-    <header class="container pt-4 pb-4">
-        <div class="d-flex justify-content-between align-items-center">
-            <h2 class="text-primary fw-bold"><i class="fa-regular fa-id-card"></i> My Profile</h2>
-            <a href="MyCafe.html" class="btn btn-outline-secondary rounded-pill">Back to Café</a>
-        </div>
-    </header>
+    <!-- HEADER / COVER IMAGE -->
+    <div class="profile-cover">
+        <!-- Back Button Overlay -->
+        <a href="MyCafe.html" class="btn btn-light rounded-pill position-absolute top-10 start-10 m-4 shadow-sm"
+            style="opacity: 0.9;">
+            <i class="fa-solid fa-arrow-left"></i> Back to Café
+        </a>
+    </div>
 
-    <div class="container pb-5">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="pastel-box p-4 text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" class="img-fluid rounded-circle mb-3"
-                        style="width: 100px; height: 100px; object-fit: cover;" alt="User" id="profileImg">
-                    <h5 id="profileName">Loading...</h5>
-                    <p class="text-muted" id="profileEmail">...</p>
-                    <button class="btn btn-sm btn-outline-dark rounded-pill mt-2" data-bs-toggle="modal"
-                        data-bs-target="#editProfileModal">Edit Profile</button>
-                </div>
+    <!-- MAIN PROFILE CONTENT -->
+    <div class="profile-container">
+        <div class="glass-card text-center">
+
+            <!-- PROFILE INFO -->
+            <div class="profile-avatar-container">
+                <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" id="profileImg" class="profile-avatar"
+                    alt="User Avatar">
+                <button class="edit-btn-floating" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
             </div>
 
-            <div class="col-md-8">
-                <div class="pastel-box p-4 h-100 bg-white">
-                    <h4 class="mb-4"><i class="fa-solid fa-clock-rotate-left"></i> Order History</h4>
-                    <div id="orderHistory">
-                        <!-- Dynamic Rows -->
-                        <p class="text-center text-muted">No past orders found.</p>
-                    </div>
+            <h2 id="profileName" class="display-6 fw-bold" style="font-family: 'Playfair Display', serif;">Loading...
+            </h2>
+            <p id="profileEmail" class="text-muted mb-4">...</p>
 
-                    <h4 class="mb-4 mt-5"><i class="fa-solid fa-heart text-danger"></i> My Wishlist</h4>
-                    <div id="wishlistContainer" class="row">
-                        <!-- Dynamic Wishlist -->
-                        <p class="text-center text-muted">No favorites yet. Go explore!</p>
+            <hr class="w-50 mx-auto my-4" style="opacity: 0.1;">
+
+            <!-- TWO COLUMN GRID: WISHLIST & ORDERS -->
+            <div class="row text-start g-4">
+
+                <!-- LEFT: WISHLIST -->
+                <div class="col-lg-6">
+                    <h4 class="mb-3 text-danger"><i class="fa-solid fa-heart"></i> My Wishlist</h4>
+                    <div id="wishlistContainer" class="row g-2">
+                        <!-- Dynamic content -->
+                        <div class="col-12 text-center py-4 bg-light rounded-3">
+                            <p class="text-muted mb-0">No favorites yet.</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- RIGHT: ORDER HISTORY -->
+                <div class="col-lg-6">
+                    <h4 class="mb-3 text-primary"><i class="fa-solid fa-clock-rotate-left"></i> Order History</h4>
+                    <div id="orderHistory" class="bg-light p-3 rounded-3" style="max-height: 400px; overflow-y: auto;">
+                        <!-- Dynamic content -->
+                        <div class="text-center py-4">
+                            <p class="text-muted mb-0">No orders placed.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>
 
