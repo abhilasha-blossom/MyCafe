@@ -28,20 +28,12 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="pastel-box p-4 text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png"
-                        class="img-fluid rounded-circle mb-3" style="width: 120px;" alt="User">
-                    <h4 id="profileName">Guest User</h4>
-                    <p class="text-muted" id="profileEmail">guest@flowerdoor.com</p>
-                    <button class="btn btn-outline-primary btn-sm mt-2" onclick="editProfile()">Edit Profile</button>
-                </div>
-
-                <div class="pastel-box p-4 mt-4">
-                    <h5><i class="fa-solid fa-heart text-danger"></i> Favorites</h5>
-                    <p class="text-muted small">Items you order frequently.</p>
-                    <ul class="list-group list-group-flush bg-transparent" id="favoritesList">
-                        <!-- Dynamic -->
-                        <li class="list-group-item bg-transparent">Loading...</li>
-                    </ul>
+                    <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" class="img-fluid rounded-circle mb-3"
+                        style="width: 100px;" alt="User">
+                    <h5 id="profileName">Loading...</h5>
+                    <p class="text-muted" id="profileEmail">...</p>
+                    <button class="btn btn-sm btn-outline-dark rounded-pill mt-2" data-bs-toggle="modal"
+                        data-bs-target="#editProfileModal">Edit Profile</button>
                 </div>
             </div>
 
