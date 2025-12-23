@@ -149,7 +149,7 @@ body.dark-mode .accordion-body {
 }
 
 .banner-title {
-  font-size: 3.5rem;
+  font-size: 3.5rem !important;
   /* Reduced for better fit */
   font-family: 'Playfair Display', serif;
   font-weight: 800;
